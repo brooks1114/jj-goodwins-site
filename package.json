@@ -2,7 +2,7 @@
   "name": "jj-goodwins-site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://your-github-username.github.io/jj-goodwins-site",
+  "homepage": "https://brooks1114.github.io/jj-goodwins-site",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
