@@ -1,0 +1,10 @@
+{
+    "public": "build",
+    "cleanUrls": false,
+    "rewrites": [
+        {
+            "source": "/jj-goodwins-site/**",
+            "destination": "/index.html"
+        }
+    ]
+}
