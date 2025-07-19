@@ -1,0 +1,1 @@
+window.location.replace('/jj-goodwins-site/');
