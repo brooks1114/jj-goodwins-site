@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { FaFacebook } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 const navLinks = [
     { to: "/", label: "Home" },
     { to: "/menu", label: "Menu" },
+    { to: "/daily-specials", label: "Daily Specials" }, // Updated from Weekly Specials
+    { to: "/happy-hour", label: "Happy Hour" },
     { to: "/about", label: "About JJ's" },
+    { to: "/gallery", label: "Gallery" },
     { to: "/contact", label: "Contact Us" },
 ];
 
@@ -14,14 +17,14 @@ export default function Navbar() {
 
     return (
         <nav
-            className="bg-black text-white px-4 py-4 h-32 flex items-center justify-between relative z-50 sticky top-0"
+            className="bg-gray-800 text-white px-4 py-4 h-32 flex items-center justify-between relative z-50 sticky top-0"
             role="navigation"
             aria-label="Main navigation"
         >
             <div className="flex items-center w-full max-w-screen-xl">
-                {/* Logo and Facebook Icon (Far Left) */}
+                {/* Logo and Social Media Icons (Far Left) */}
                 <div className="flex items-center space-x-4">
-                    <Link to="/" aria-label="Go to homepage">
+                    <NavLink to="/" aria-label="Go to homepage">
                         <img
                             src={`${process.env.PUBLIC_URL}/assets/logo.png`}
                             alt="JJ Goodwins Logo"
@@ -29,7 +32,7 @@ export default function Navbar() {
                             height="150"
                             className="h-24 object-contain"
                         />
-                    </Link>
+                    </NavLink>
                     <a
                         href="https://www.facebook.com/share/1G1XtjX3dF/?mibextid=wwXlfr"
                         target="_blank"
@@ -38,6 +41,15 @@ export default function Navbar() {
                         aria-label="Visit JJ Goodwins on Facebook"
                     >
                         <FaFacebook className="w-10 h-10" />
+                    </a>
+                    <a
+                        href="https://www.instagram.com/jjgoodwinsrestaurant"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-pink-500 hover:text-pink-700 transition"
+                        aria-label="Visit JJ Goodwins on Instagram"
+                    >
+                        <FaInstagram className="w-10 h-10" />
                     </a>
                 </div>
 
@@ -60,18 +72,23 @@ export default function Navbar() {
                 {/* Links (Desktop and Mobile Menu) */}
                 <div
                     className={`${isOpen ? "flex" : "hidden"
-                        } md:flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6 text-lg font-bold absolute md:static top-32 left-0 w-full md:w-auto bg-black md:bg-transparent p-4 md:p-0 md:flex-1`}
+                        } md:flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6 text-lg font-bold absolute md:static top-32 left-0 w-full md:w-auto bg-gray-800 md:bg-transparent p-4 md:p-0 md:flex-1 transition-transform duration-300 ${isOpen ? "translate-y-0" : "-translate-y-full"
+                        }`}
                 >
                     {navLinks.map((link) => (
-                        <Link
+                        <NavLink
                             key={link.to}
                             to={link.to}
-                            className="hover:text-primary transition"
+                            className={({ isActive }) =>
+                                `transition ${isActive ? "text-yellow-400 font-extrabold" : "text-white hover:text-yellow-400"
+                                }`
+                            }
                             aria-label={`Go to ${link.label} page`}
+                            aria-current={({ isActive }) => (isActive ? "page" : undefined)}
                             onClick={() => setIsOpen(false)}
                         >
                             {link.label}
-                        </Link>
+                        </NavLink>
                     ))}
                 </div>
             </div>
