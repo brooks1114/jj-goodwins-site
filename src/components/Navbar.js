@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaInstagram } from "react-icons/fa"; // Removed FaShoppingBag
 
 const navLinks = [
     { to: "/", label: "Home" },
     { to: "/menu", label: "Menu" },
-    { to: "/daily-specials", label: "Daily Specials" }, // Updated from Weekly Specials
+    { to: "/daily-specials", label: "Daily Specials" },
     { to: "/happy-hour", label: "Happy Hour" },
     { to: "/about", label: "About JJ's" },
     { to: "/gallery", label: "Gallery" },
@@ -51,9 +51,23 @@ export default function Navbar() {
                     >
                         <FaInstagram className="w-10 h-10" />
                     </a>
+                    <a
+                        href="https://www.doordash.com/store/jj-goodwins-restaurant-&-sports-pub-center-barnstead-35360245/77320366/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-red-500 hover:text-red-700 transition"
+                        aria-label="Order from JJ Goodwins on DoorDash"
+                        id="doordash-icon"
+                    >
+                        <img
+                            src={`${process.env.PUBLIC_URL}/assets/Doordash.jpg`}
+                            alt="DoorDash"
+                            className="w-10 h-10 object-contain"
+                        />
+                    </a>
                 </div>
 
-                {/* Hamburger Menu Button (Mobile) */}
+                {/* Rest of Navbar.js remains unchanged */}
                 <button
                     className="md:hidden text-white focus:outline-none bg-gray-800 p-2 rounded"
                     onClick={() => setIsOpen(!isOpen)}
@@ -68,20 +82,15 @@ export default function Navbar() {
                         />
                     </svg>
                 </button>
-
-                {/* Links (Desktop and Mobile Menu) */}
                 <div
-                    className={`${isOpen ? "flex" : "hidden"
-                        } md:flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6 text-lg font-bold absolute md:static top-32 left-0 w-full md:w-auto bg-gray-800 md:bg-transparent p-4 md:p-0 md:flex-1 transition-transform duration-300 ${isOpen ? "translate-y-0" : "-translate-y-full"
-                        }`}
+                    className={`${isOpen ? "flex" : "hidden"} md:flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6 text-lg font-bold absolute md:static top-32 left-0 w-full md:w-auto bg-gray-800 md:bg-transparent p-4 md:p-0 md:flex-1 transition-transform duration-300 ${isOpen ? "translate-y-0" : "-translate-y-full"}`}
                 >
                     {navLinks.map((link) => (
                         <NavLink
                             key={link.to}
                             to={link.to}
                             className={({ isActive }) =>
-                                `transition ${isActive ? "text-yellow-400 font-extrabold" : "text-white hover:text-yellow-400"
-                                }`
+                                `transition ${isActive ? "text-yellow-400 font-extrabold" : "text-white hover:text-yellow-400"}`
                             }
                             aria-label={`Go to ${link.label} page`}
                             aria-current={({ isActive }) => (isActive ? "page" : undefined)}

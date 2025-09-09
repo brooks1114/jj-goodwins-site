@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import DoorDashPopup from "./DoorDashPopup.js"; // Correct import path (same directory)
 
 export default function Home() {
+    console.log("Home component rendered"); // Debugging log
     return (
         <div className="bg-white text-gray-800 font-serif">
             <Helmet>
@@ -12,6 +14,7 @@ export default function Home() {
                     content="Welcome to JJ Goodwins, your neighborhood pub in Center Barnstead, NH, offering delicious food, craft beer, and live music."
                 />
             </Helmet>
+            <DoorDashPopup />
             {/* Hero Section */}
             <div className="bg-black">
                 <img
@@ -22,7 +25,7 @@ export default function Home() {
                     className="w-full h-48 sm:h-64 md:h-96 object-cover mx-auto rounded-b-lg shadow-lg"
                 />
             </div>
-
+            {/* Rest of Home.js content remains unchanged */}
             <div className="bg-secondary text-white py-12 px-4 text-center">
                 <h1 className="text-3xl font-bold mb-4">Welcome to JJ Goodwin’s</h1>
                 <p className="text-xl max-w-3xl mx-auto text-justify leading-relaxed font-medium">
@@ -36,14 +39,11 @@ export default function Home() {
                     View Menu
                 </Link>
             </div>
-
-            {/* Location & Hours */}
             <section className="bg-gray-50 py-12 px-6 text-center" aria-labelledby="visit-heading">
                 <h2 id="visit-heading" className="text-3xl font-bold mb-4">
                     Visit Us
                 </h2>
                 <p className="mb-2">769 Suncook Valley Rd, Center Barnstead, NH 03225</p>
-                {/* Hours Image */}
                 <div className="mb-8 flex justify-center">
                     <div className="bg-yellow-300 p-4 sm:p-6 rounded-lg shadow-lg w-full max-w-md">
                         <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-center text-gray-800">
