@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/jj-goodwins-site/static/css/main.d8701aaf.css",
-    "main.js": "/jj-goodwins-site/static/js/main.8b5ede11.js",
+    "main.css": "/jj-goodwins-site/static/css/main.fcbb3528.css",
+    "main.js": "/jj-goodwins-site/static/js/main.b8e77c51.js",
     "static/js/453.48470269.chunk.js": "/jj-goodwins-site/static/js/453.48470269.chunk.js",
     "index.html": "/jj-goodwins-site/index.html",
-    "main.d8701aaf.css.map": "/jj-goodwins-site/static/css/main.d8701aaf.css.map",
-    "main.8b5ede11.js.map": "/jj-goodwins-site/static/js/main.8b5ede11.js.map",
+    "main.fcbb3528.css.map": "/jj-goodwins-site/static/css/main.fcbb3528.css.map",
+    "main.b8e77c51.js.map": "/jj-goodwins-site/static/js/main.b8e77c51.js.map",
     "453.48470269.chunk.js.map": "/jj-goodwins-site/static/js/453.48470269.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d8701aaf.css",
-    "static/js/main.8b5ede11.js"
+    "static/css/main.fcbb3528.css",
+    "static/js/main.b8e77c51.js"
   ]
 }
