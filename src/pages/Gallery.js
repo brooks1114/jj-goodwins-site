@@ -82,17 +82,6 @@ export default function Gallery() {
                 />
             </Helmet>
 
-            {/* Hero Section */}
-            <div className="bg-black">
-                <img
-                    src={`${process.env.PUBLIC_URL}/assets/porch.jpg`}
-                    alt="JJ Goodwins exterior"
-                    width="1200"
-                    height="400"
-                    className="w-full h-48 sm:h-64 md:h-96 object-cover mx-auto rounded-b-lg shadow-lg"
-                />
-            </div>
-
             {/* Gallery Section */}
             <section className="py-12 px-4 text-center" aria-labelledby="gallery-heading">
                 <h2 id="gallery-heading" className="text-3xl sm:text-4xl font-bold mb-6 text-gray-800">

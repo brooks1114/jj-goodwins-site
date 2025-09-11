@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
-import { useSwipeable } from "react-swipeable";
+import React, { useEffect, useMemo } from "react";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
 
@@ -9,9 +8,6 @@ const menuImages = [
 ];
 
 export default function Menu() {
-    const [currentIndex, setCurrentIndex] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
-
     const images = useMemo(() => menuImages, []);
 
     useEffect(() => {
@@ -22,42 +18,8 @@ export default function Menu() {
         });
     }, [images]);
 
-    const openModal = useCallback((index) => {
-        setIsLoading(true);
-        setCurrentIndex(index);
-    }, []);
-
-    const closeModal = useCallback(() => {
-        setCurrentIndex(null);
-    }, []);
-
-    const showNext = useCallback(() => {
-        setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, [images]);
-
-    const showPrev = useCallback(() => {
-        setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
-    }, [images]);
-
-    useEffect(() => {
-        const handleKeyDown = (e) => {
-            if (currentIndex === null) return;
-            if (e.key === "ArrowRight") showNext();
-            if (e.key === "ArrowLeft") showPrev();
-            if (e.key === "Escape") closeModal();
-        };
-        window.addEventListener("keydown", handleKeyDown);
-        return () => window.removeEventListener("keydown", handleKeyDown);
-    }, [currentIndex, showNext, showPrev, closeModal]);
-
-    const swipeHandlers = useSwipeable({
-        onSwipedLeft: showNext,
-        onSwipedRight: showPrev,
-        trackMouse: true,
-    });
-
     return (
-        <div className="pt-4 sm:pt-6 pb-8 px-4 sm:px-8 max-w-4xl mx-auto bg-gray-100 min-h-screen font-serif">
+        <div className="pt-4 sm:pt-6 pb-8 px-4 sm:px-8 max-w-5xl mx-auto bg-gray-100 min-h-screen font-serif">
             <Helmet>
                 <title>JJ Goodwins | Menu - Center Barnstead, NH</title>
                 <meta
@@ -66,27 +28,16 @@ export default function Menu() {
                 />
             </Helmet>
 
-            {/* Hero Section */}
-            <div className="bg-black">
-                <img
-                    src={`${process.env.PUBLIC_URL}/assets/porch.jpg`}
-                    alt="JJ Goodwins Exterior"
-                    width="1200"
-                    height="400"
-                    className="w-full h-48 sm:h-64 md:h-96 object-cover mx-auto rounded-b-lg shadow-lg"
-                />
-            </div>
-
             {/* Menu Section */}
             <section className="py-12 px-4 text-center" aria-labelledby="menu-heading">
                 <h2 id="menu-heading" className="text-3xl sm:text-4xl font-bold mb-6 text-gray-800">
                     Our Menu
                 </h2>
                 <p className="text-base sm:text-lg max-w-3xl mx-auto text-justify leading-relaxed text-gray-700 mb-8">
-                    Discover the delicious offerings at JJ Goodwins! From hearty pub classics to refreshing specialty cocktails, our menu has something for everyone. Click the images below to view our full menu, and visit us at 769 Suncook Valley Rd, Center Barnstead, NH, to enjoy a meal in our family-friendly restaurant and sports pub!
+                    Discover the delicious offerings at JJ Goodwins! From hearty pub classics to refreshing specialty cocktails, our menu has something for everyone. View our full menu below, and visit us at 769 Suncook Valley Rd, Center Barnstead, NH, to enjoy a meal in our family-friendly restaurant and sports pub!
                 </p>
                 <div className="mb-8 flex justify-center">
-                    <div className="bg-yellow-300 p-4 sm:p-6 rounded-lg shadow-lg w-full max-w-md">
+                    <div className="bg-yellow-300 p-4 sm:p-6 rounded-lg shadow-lg w-full max-w-4xl">
                         <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-center text-gray-800">
                             Menu Details
                         </h3>
@@ -100,10 +51,9 @@ export default function Menu() {
                                         src={img}
                                         alt={`Menu page ${idx + 1}`}
                                         loading="lazy"
-                                        width="500"
-                                        height="700"
-                                        className="w-full h-auto object-contain rounded-lg shadow-lg cursor-pointer transition-transform hover:scale-105"
-                                        onClick={() => openModal(idx)}
+                                        width="800"
+                                        height="1100"
+                                        className="w-full h-auto object-contain rounded-lg shadow-lg"
                                         onError={() => console.error(`Failed to load image: ${img}`)}
                                     />
                                 ))}
@@ -186,66 +136,6 @@ export default function Menu() {
                     </div>
                 </div>
             </section>
-
-            {/* Modal for Menu Images */}
-            {currentIndex !== null && (
-                <div
-                    className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 animate-fade-in"
-                    onClick={closeModal}
-                    role="dialog"
-                    aria-label="Menu image modal"
-                >
-                    <div
-                        className="relative max-w-full max-h-[90vh]"
-                        {...swipeHandlers}
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <button
-                            onClick={closeModal}
-                            aria-label="Close menu modal"
-                            className="absolute top-2 right-2 bg-white text-black text-3xl font-bold rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-gray-200 transition"
-                        >
-                            ×
-                        </button>
-                        <button
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                showPrev();
-                            }}
-                            aria-label="Previous menu image"
-                            className="absolute left-2 top-1/2 -translate-y-1/2 bg-white text-black text-3xl font-bold rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-gray-200 transition"
-                        >
-                            ←
-                        </button>
-                        <button
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                showNext();
-                            }}
-                            aria-label="Next menu image"
-                            className="absolute right-2 top-1/2 -translate-y-1/2 bg-white text-black text-3xl font-bold rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-gray-200 transition"
-                        >
-                            →
-                        </button>
-                        {isLoading && (
-                            <div className="absolute inset-0 flex items-center justify-center bg-gray-200 rounded">
-                                <span className="text-gray-600 animate-pulse">Loading...</span>
-                            </div>
-                        )}
-                        <img
-                            src={images[currentIndex]}
-                            alt={`Zoomed Menu ${currentIndex + 1}`}
-                            width="500"
-                            height="700"
-                            className={`max-h-[90vh] w-auto rounded shadow-lg transition-opacity duration-300 ${isLoading ? "opacity-0" : "opacity-100"
-                                }`}
-                            onLoad={() => setIsLoading(false)}
-                            onError={() => console.error(`Failed to load modal image: ${images[currentIndex]}`)}
-                            onClick={(e) => e.stopPropagation()}
-                        />
-                    </div>
-                </div>
-            )}
         </div>
     );
 }

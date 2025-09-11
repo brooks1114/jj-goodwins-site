@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import DoorDashPopup from "./DoorDashPopup.js"; // Correct import path (same directory)
+import DoorDashPopup from "./DoorDashPopup.js";
 
 export default function Home() {
-    console.log("Home component rendered"); // Debugging log
+    console.log("Home component rendered");
     return (
         <div className="bg-white text-gray-800 font-serif">
             <Helmet>
@@ -25,15 +25,14 @@ export default function Home() {
                     className="w-full h-48 sm:h-64 md:h-96 object-cover mx-auto rounded-b-lg shadow-lg"
                 />
             </div>
-            {/* Rest of Home.js content remains unchanged */}
             <div className="bg-secondary text-white py-12 px-4 text-center">
                 <h1 className="text-3xl font-bold mb-4">Welcome to JJ Goodwin’s</h1>
                 <p className="text-xl max-w-3xl mx-auto text-justify leading-relaxed font-medium">
-                    Welcome to JJ Goodwins, the heart of Center Barnstead, NH, where great food, refreshing drinks, and unforgettable moments come together in a warm, family-friendly atmosphere. Nestled at 769 Suncook Valley Rd, our neighborhood restaurant and sports pub is the go-to spot for locals and visitors alike. Indulge in our mouthwatering pub fare—think crispy nachos, wood-fired pizzas, juicy burgers, and hearty comfort dishes crafted with care. Our talented bartenders keep the vibe lively with creative, handcrafted cocktails and a rotating selection of craft beers on tap, ensuring there’s always something new to sip. Whether you’re catching the game on our big screens, shooting pool with friends, or tapping your feet to live music from local talent on select evenings, JJ Goodwins is where community and good times thrive. Join us for our famous Happy Hour specials, daily deals, or simply to relax in our laid-back setting. Follow us on social media for the latest updates and swing by to experience the JJ Goodwins difference—where every visit feels like coming home!
+                    JJ Goodwins, located at 769 Suncook Valley Rd, Center Barnstead, NH, is your neighborhood restaurant and sports pub serving delicious pub fare and craft beers in a family-friendly atmosphere. Enjoy live music, Happy Hour specials, and a welcoming vibe that makes every visit feel like home.
                 </p>
                 <Link
                     to="/menu"
-                    className="inline-block mt-6 px-6 py-3 bg-primary text-black font-bold rounded hover:bg-yellow-400 transition"
+                    className="inline-block mt-6 px-10 py-5 bg-primary text-black text-xl font-bold rounded-lg hover:bg-yellow-400 transition transform scale-110 sm:scale-100 md:scale-110"
                     aria-label="View our menu"
                 >
                     View Menu
