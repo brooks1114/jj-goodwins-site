@@ -8,10 +8,11 @@ import HappyHour from "./pages/HappyHour";
 import About from "./pages/About";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
-    <Router basename="/"> {/* Changed from /jj-goodwins-site */}
+    <Router basename="/">
       <div className="min-h-screen">
         <Navbar />
         <main>
@@ -23,7 +24,7 @@ export default function App() {
             <Route path="/about" element={<About />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<div className="text-center p-8">404 - Page Not Found</div>} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
       </div>
