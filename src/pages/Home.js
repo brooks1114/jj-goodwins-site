@@ -13,6 +13,7 @@ export default function Home() {
                     name="description"
                     content="Welcome to JJ Goodwins, your neighborhood pub in Center Barnstead, NH, offering delicious food, craft beer, and live music."
                 />
+                <meta name="google-site-verification" content="EnCJElGtG6cVkR-THdw_M4aTZh8Y9scmTlWWMM7V89E" />
             </Helmet>
             <DoorDashPopup />
             {/* Hero Section */}
