@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/jj-goodwins-site/static/css/main.e393f563.css",
-    "main.js": "/jj-goodwins-site/static/js/main.a7a499f6.js",
-    "static/js/453.48470269.chunk.js": "/jj-goodwins-site/static/js/453.48470269.chunk.js",
-    "index.html": "/jj-goodwins-site/index.html",
-    "main.e393f563.css.map": "/jj-goodwins-site/static/css/main.e393f563.css.map",
-    "main.a7a499f6.js.map": "/jj-goodwins-site/static/js/main.a7a499f6.js.map",
-    "453.48470269.chunk.js.map": "/jj-goodwins-site/static/js/453.48470269.chunk.js.map"
+    "main.css": "/%20//www.jjgoodwinsrestaurant.com/static/css/main.e393f563.css",
+    "main.js": "/%20//www.jjgoodwinsrestaurant.com/static/js/main.b5735e70.js",
+    "static/js/453.48470269.chunk.js": "/%20//www.jjgoodwinsrestaurant.com/static/js/453.48470269.chunk.js",
+    "index.html": "/%20//www.jjgoodwinsrestaurant.com/index.html",
+    "main.e393f563.css.map": "/%20//www.jjgoodwinsrestaurant.com/static/css/main.e393f563.css.map",
+    "main.b5735e70.js.map": "/%20//www.jjgoodwinsrestaurant.com/static/js/main.b5735e70.js.map",
+    "453.48470269.chunk.js.map": "/%20//www.jjgoodwinsrestaurant.com/static/js/453.48470269.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e393f563.css",
-    "static/js/main.a7a499f6.js"
+    "static/js/main.b5735e70.js"
   ]
 }
