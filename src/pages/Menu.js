@@ -3,8 +3,10 @@ import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
 
 const menuImages = [
-    `${process.env.PUBLIC_URL}/assets/menu-front.jpg`,
-    `${process.env.PUBLIC_URL}/assets/menu-back.jpg`,
+    `${process.env.PUBLIC_URL}/assets/menu-1.jpg`,
+    `${process.env.PUBLIC_URL}/assets/menu-2.jpg`,
+    `${process.env.PUBLIC_URL}/assets/menu-3.jpg`,
+    `${process.env.PUBLIC_URL}/assets/menu-4.jpg`,
 ];
 
 export default function Menu() {
