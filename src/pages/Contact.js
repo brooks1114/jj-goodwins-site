@@ -30,8 +30,8 @@ export default function Contact() {
                             📍 769 Suncook Valley Rd, Center Barnstead, NH 03225
                         </p>
                         <p className="text-base sm:text-lg text-gray-800 mb-4">
-                            📞 <a href="tel:+16032690044" className="text-blue-500 hover:text-blue-700 underline">
-                                (603) 269-0044
+                            📞 <a href="tel:+16032690059" className="text-blue-500 hover:text-blue-700 underline">
+                                (603) 269-0059
                             </a>
                         </p>
                         <p className="text-sm sm:text-base text-gray-600 mt-4 text-center">

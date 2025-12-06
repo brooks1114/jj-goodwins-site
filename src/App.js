@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import EmploymentApplication from "./pages/EmploymentApplication"; // <-- NEW
 
 export default function App() {
   return (
@@ -24,6 +25,10 @@ export default function App() {
             <Route path="/about" element={<About />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
+            <Route
+              path="/employment-application"
+              element={<EmploymentApplication />} // <-- NEW
+            />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
