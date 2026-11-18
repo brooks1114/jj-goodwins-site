@@ -5,10 +5,11 @@ import { FaFacebook, FaInstagram } from "react-icons/fa";
 const navLinks = [
     { to: "/", label: "Home" },
     { to: "/menu", label: "Menu" },
-    { to: "/daily-specials", label: "Daily Specials" },
-    { to: "/happy-hour", label: "Happy Hour" },
+    // Hidden for now (out of date); pages still exist in src/pages. Uncomment to restore.
+    // { to: "/daily-specials", label: "Daily Specials" },
+    // { to: "/happy-hour", label: "Happy Hour" },
     { to: "/about", label: "About JJ's" },
-    { to: "/gallery", label: "Gallery" },
+    // { to: "/gallery", label: "Gallery" }, // Hidden for now; page still exists.
     { to: "/employment-application", label: "Job Application" }, // SHORTER LABEL
     { to: "/contact", label: "Contact Us" },
 ];

@@ -23,7 +23,7 @@ export default function About() {
                     JJ Goodwins, a beloved cornerstone of Center Barnstead, NH, was proudly revitalized in the summer of 2025 under new ownership, bringing back its iconic name and vibrant spirit. Housed in a charming two-story building at 769 Suncook Valley Rd, our family-friendly restaurant and sports pub offers something for everyone. Upstairs, enjoy our newly renovated bar and spacious indoor seating, perfect for large parties, or step out to the outdoor patio for a relaxing dining experience. Test your skills at our dartboards or gather with friends in a welcoming atmosphere. Downstairs, our traditional pub-style bar sets the stage for lively evenings with live music, a jukebox loaded with your favorite hits, pool tables, and complimentary popcorn to keep the good times rolling.
                     <br />
                     <br />
-                    At JJ Goodwins, we’re committed to keeping things fresh and exciting. Our bartenders craft unique specialty drinks weekly, and our Monday-through-Friday happy hour is the perfect way to unwind. Explore our weekly specials for delicious deals, and catch every big game with our sports packages, including NFL football and more. Whether you’re here for a family meal, a night out with friends, or to cheer on your team, JJ Goodwins is your go-to spot for great food, cold drinks, and unforgettable moments. Come visit us and experience the warmth and energy of our reimagined pub!
+                    At JJ Goodwins, we’re committed to keeping things fresh and exciting. Our bartenders craft unique specialty drinks weekly, and our Tuesday-through-Friday happy hour is the perfect way to unwind. Explore our weekly specials for delicious deals, and catch every big game with our sports packages, including NFL football and more. Whether you’re here for a family meal, a night out with friends, or to cheer on your team, JJ Goodwins is your go-to spot for great food, cold drinks, and unforgettable moments. Come visit us and experience the warmth and energy of our reimagined pub!
                 </p>
                 <div className="text-center mt-6">
                     <Link
@@ -47,8 +47,8 @@ export default function About() {
                             Hours of Operation
                         </h3>
                         <img
-                            src={`${process.env.PUBLIC_URL}/assets/hours.jpg`}
-                            alt="JJ Goodwins Hours of Operation"
+                            src={`${process.env.PUBLIC_URL}/assets/winter-hours.jpg`}
+                            alt="JJ Goodwins Winter Hours: Monday closed; Tuesday to Thursday 4 PM to 10 PM; Friday 4 PM to 11 PM; Saturday 11:30 AM to 11 PM; Sunday 11:30 AM to 9 PM"
                             className="w-full h-auto object-contain rounded-lg"
                         />
                     </div>

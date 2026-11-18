@@ -52,8 +52,8 @@ export default function Contact() {
                             Hours of Operation
                         </h3>
                         <img
-                            src={`${process.env.PUBLIC_URL}/assets/hours.jpg`}
-                            alt="JJ Goodwins Hours of Operation"
+                            src={`${process.env.PUBLIC_URL}/assets/winter-hours.jpg`}
+                            alt="JJ Goodwins Winter Hours: Monday closed; Tuesday to Thursday 4 PM to 10 PM; Friday 4 PM to 11 PM; Saturday 11:30 AM to 11 PM; Sunday 11:30 AM to 9 PM"
                             className="w-full h-auto object-contain rounded-lg"
                         />
                     </div>

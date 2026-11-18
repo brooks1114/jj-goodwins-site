@@ -1,17 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>JJ Goodwins Restaurant - Not Found</title>
-    <meta http-equiv="refresh" content="0; url=/">
+    <title>JJ Goodwins Restaurant & Sports Pub</title>
+    <script>
+        // GitHub Pages serves this file for any address it doesn't have as a real
+        // file (e.g. /menu). Send the visitor to the home page with the requested
+        // path in the query string; index.html restores it so the app can route.
+        // Based on https://github.com/rafgraph/spa-github-pages (MIT).
+        var l = window.location;
+        l.replace(
+            l.protocol + "//" + l.host + "/?/" +
+            l.pathname.slice(1).replace(/&/g, "~and~") +
+            (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
+            l.hash
+        );
+    </script>
 </head>
 
 <body>
-    <script>
-        // Redirect to root, preserving the requested path
-        window.location.href = "/" + window.location.pathname + window.location.search + window.location.hash;
-    </script>
+    <noscript>Page not found. <a href="/">Go to the JJ Goodwins home page</a>.</noscript>
 </body>
 
 </html>
