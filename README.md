@@ -30,7 +30,8 @@ of `src/App.js` and uncomment its link in `src/components/Navbar.js`.
 
 ## Working on the site
 
-Requires [Node.js](https://nodejs.org) (LTS).
+Requires [Node.js](https://nodejs.org) version 26 (LTS), the same version the
+publishing workflow uses (set in `.nvmrc`).
 
 ```
 npm ci        # install the exact dependency versions in package-lock.json
