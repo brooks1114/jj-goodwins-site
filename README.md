@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# JJ Goodwin's Restaurant & Sports Pub website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live at **https://www.jjgoodwinsrestaurant.com**, hosted on GitHub Pages.
 
-## Available Scripts
+Built with React (Create React App) and Tailwind CSS.
 
-In the project directory, you can run:
+## Where things live
 
-### `npm start`
+| What | Where |
+|---|---|
+| Pages (Home, Menu, About, Contact, Job Application, …) | `src/pages/` |
+| Navigation bar links | `src/components/Navbar.js` |
+| Page addresses (routes) | `src/App.js` |
+| Images and PDFs (menu pages, hours, logo, …) | `public/assets/` |
+| Custom domain, sitemap, robots, 404 redirect | `public/` |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Common updates
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **New menu:** replace `public/assets/menu-1.jpg` … `menu-4.jpg` (same names).
+  To change the number of pages, edit the list at the top of `src/pages/Menu.js`.
+- **New hours:** replace `public/assets/winter-hours.jpg`. It is shown on the
+  Home, Menu, About and Contact pages.
 
-### `npm test`
+### Hidden pages
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Daily Specials, Happy Hour and Gallery are hidden for now (their content was out
+of date). The page files are still in `src/pages/`, and their old addresses
+redirect to the Menu or Home page. To bring one back, follow the note at the top
+of `src/App.js` and uncomment its link in `src/components/Navbar.js`.
 
-### `npm run build`
+## Working on the site
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Requires [Node.js](https://nodejs.org) (LTS).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+npm ci        # install the exact dependency versions in package-lock.json
+npm start     # preview at http://localhost:3000 (updates as you edit)
+npm run build # production build into build/ (optional local check)
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Make changes on a branch, preview them, then merge into `master`.
 
-### `npm run eject`
+## Publishing
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Publishing is automatic. Every push to `master` runs the **Deploy site**
+workflow (`.github/workflows/deploy.yml`), which builds the site and publishes
+it to GitHub Pages. It takes a couple of minutes; progress is on the repo's
+**Actions** tab.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To re-publish without a code change: **Actions → Deploy site → Run workflow**.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Why inner-page links work
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+GitHub Pages only knows about real files, so a visit straight to `/menu` gets
+`public/404.html`. That page forwards to `/?/menu`, and a small script in
+`public/index.html` turns it back into `/menu` for the app.
+Based on [spa-github-pages](https://github.com/rafgraph/spa-github-pages).
